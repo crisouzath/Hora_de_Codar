@@ -1,0 +1,25 @@
+<!-- mini calculadora -->
+<script>
+    alert("Bem-Vindo a caculadora");
+    var numero=parseFloat(prompt("Insira um número:"));
+    var operacao=parseInt(prompt("Qual a operação: 1.adição 2.subtração  3.multplicação 4.divisão "));
+    var numero2=parseFloat(prompt("O segundo número:"));
+    var resultado;
+
+    switch(operacao){
+        case 1:
+            resultado=numero+numero2;
+            break;
+        case 2:
+            resultado=numero-numero2;
+            break;
+        case 3:
+            resultado=numero*numero2;
+            break;
+        case 4:
+            resultado=numero/numero2;
+            break;
+    }
+
+    alert("O resultado foi "+resultado);
+</script>

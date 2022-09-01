@@ -1,0 +1,24 @@
+<!-- Faça um programa que leia 6 números que o usuário vai informar. Todos os números lidos com valor inferior a 72 devem ser somados. Escreva o 
+valor final da soma efetuada e também todos valores que o usuário informou.   -->
+<html>
+    <script>
+        var numero1=parseInt(prompt("Fala um numero:"));
+        var numero2=parseInt(prompt("Mais um:"));
+        var numero3=parseInt(prompt("Outro:"));
+        var numero4=parseInt(prompt("Quase lá:"));
+        var numero5=parseInt(prompt("Quase no final:"));
+        var numero6=parseInt(prompt("O útimo:"));
+        var numeros=[numero1,numero2,numero3,numero4,numero5,numero6];
+        var resultado=0;
+
+        for(var i=0; i<numeros.length; i++){
+            if(numeros[i]<72){
+                resultado+=numeros[i];
+            }
+            
+        }
+
+        alert("Os números foram "+numeros);
+        alert(resultado);
+    </script>
+</html>

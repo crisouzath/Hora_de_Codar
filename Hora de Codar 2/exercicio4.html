@@ -1,0 +1,26 @@
+<!-- Faça um programa que leia  3 valores (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores. -->
+<script>
+    var numero1=parseFloat(prompt("Escreva um número"));
+    var numero2=parseFloat(prompt("Outro"));
+    var numero3=parseFloat(prompt("Mais um"));
+
+    if(numero1>numero2 && numero1>numero3){
+        if(numero2>numero3){
+            alert("A soma dos dois maiores é "+parseFloat(numero1+numero2));
+        }else{
+            alert("A soma dos dois maiores é "+parseFloat(numero1+numero3));
+        }
+    }else if(numero2>numero3 && numero2>numero1){
+        if(numero1>numero3){
+            alert("A soma dos dois maiores é "+parseFloat(numero2+numero1));
+        }else{
+            alert("A soma dos dois maiores é "+parseFloat(numero2+numero3));
+        }
+    }else{
+        if(numero2>numero1){
+            alert("A soma dos dois maiores é "+parseFloat(numero3+numero2));
+        }else{
+            alert("A soma dos dois maiores é "+parseFloat(numero3+numero1));
+        }
+    }
+</script>

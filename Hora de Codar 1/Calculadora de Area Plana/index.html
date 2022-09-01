@@ -1,0 +1,230 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+            font-family:'Roboto', sans-serif;
+        }
+
+        .main{
+            width:100%;
+            height:100%;
+            display:flex;
+            justify-content:center;
+            padding: 30px;
+        }
+        
+        button{
+            margin-top: 20px;
+            margin-left: 100px;
+            width: 100px;
+            height: 30px;
+            padding: 3px;
+            border: green 3px solid;
+            background-color:transparent;
+            transition: all .2s ease-in-out;
+        }
+
+        button:hover{
+            background-color:green;
+            color:white;
+        }
+
+        .resultado{
+            padding:10px;
+            width:200px;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function reset(){
+            var raio=document.getElementById("raio");
+            var lado=document.getElementById("lado");
+            var altura=document.getElementById("altura");
+            var base=document.getElementById("base");
+            var baseMenor=document.getElementById("baseMenor");
+            var diagonalMaior=document.getElementById("diagonalMaior");
+            var diagonalMenor=document.getElementById("diagonalMenor");
+
+            raio.disabled=true;
+            lado.disabled=true;
+            altura.disabled=true;
+            base.disabled=true;
+            baseMenor.disabled=true;
+            diagonalMaior.disabled=true;
+            diagonalMenor.disabled=true;
+
+            raio.value="";
+            lado.value="";
+            altura.value="";
+            base.value="";
+            baseMenor.value="";
+            diagonalMaior.value="";
+            diagonalMenor.value="";
+        }
+        
+
+        document.addEventListener("click", (event) => {
+            if (event.target.matches(".forma")) {
+                switch (event.target.id) {
+                    case "circulo":
+                        reset();
+                        var raio=document.getElementById("raio");
+                        raio.disabled=false;
+                        break;
+                    case "triangulo":
+                        reset();
+                        var base=document.getElementById("base");
+                        var altura=document.getElementById("altura");
+                        base.disabled=false;
+                        altura.disabled=false;
+                        
+                        break;
+                    case "quadrado":
+                        reset();
+                        var lado=document.getElementById("lado");
+                        lado.disabled=false;
+                        break;
+                    case "losango":
+                        reset();
+                        var diagonalMaior=document.getElementById("diagonalMaior");
+                        var diagonalMenor=document.getElementById("diagonalMenor");
+                        diagonalMaior.disabled=false;
+                        diagonalMenor.disabled=false;
+                        break;
+                    case "retangulo":
+                        reset();
+                        var altura=document.getElementById("altura")
+                        var base=document.getElementById("base");
+                        altura.disabled=false;
+                        base.disabled=false;
+                        break;
+                    case "paralelogramo":
+                    reset();
+                        var altura=document.getElementById("altura")
+                        var base=document.getElementById("base");
+                        altura.disabled=false;
+                        base.disabled=false;
+                        break;
+                    case "trapezio":
+                        reset();
+                        var baseMenor=document.getElementById("baseMenor");
+                        var baseMaior=document.getElementById("base");
+                        var altura=document.getElementById("altura");
+                        baseMenor.disabled=false;
+                        baseMaior.disabled=false;
+                        altura.disabled=false;
+                        break;
+                };
+            }
+        }
+        )
+
+        function calcular(){
+            var inputs=document.getElementsByClassName("forma");
+            for(var i=0; i<inputs.length; i++){
+                if(inputs[i].checked){
+                    var resultado=document.getElementById("resultado");
+                    resultado.innerText="Rooi";
+                    switch(inputs[i].value){
+                        case "circulo":
+                            var raio=document.querySelector("#raio").value;
+                            var pi= 3.14;
+                            var areaDoCirculo=(raio*raio)*pi;
+                            resultado.innerText="A área do círculo é de "+areaDoCirculo;
+                            break;
+                        case "triangulo":
+                            var altura=document.querySelector("#altura").value;
+                            var base=document.querySelector("#base").value;
+                            var areaDoTriangulo=(altura*base)/2;
+                            resultado.innerText="A área do triângulo é de "+areaDoTriangulo;
+                            break;
+                        case "quadrado":
+                            var lado=document.querySelector("#lado").value;
+                            var areaDoQuadrado=lado*lado;
+                            resultado.innerText="A área do quadrado é de "+areaDoQuadrado;
+                            break;
+                        case "losango":
+                            var diagonalMenor=document.querySelector("#diagonalMenor").value;
+                            var diagonalMaior=document.querySelector("#diagonalMaior").value;
+                            var areaDoLosango=(diagonalMaior*diagonalMenor)/2;
+                            resultado.innerText="A área do losango é de "+areaDoLosango;
+                            break;
+                        case "retangulo":
+                        var altura=document.querySelector("#altura").value;
+                            var base=document.querySelector("#base").value;
+                            var areaDoRetangulo=altura*base;
+                            resultado.innerText="A área do retangulo é de "+areaDoRetangulo;
+                            break;
+                        case "paralelogramo":
+                        var altura=document.querySelector("#altura").value;
+                            var base=document.querySelector("#base").value;
+                            var areaDoParalelogramo=altura*base;
+                            resultado.innerText="A área do paralelogramo é de "+areaDoParalelogramo;
+                            break;
+                        case "trapezio":
+                            var base=parseFloat(document.querySelector("#base").value);
+                            var baseMenor=parseFloat(document.querySelector("#baseMenor").value);
+                            var altura=parseFloat(document.querySelector("#altura").value);
+                            var areaDoTrapezio=((base+baseMenor)*altura)/2;
+                            resultado.innerText="A área do trapézio é de "+areaDoTrapezio;
+                            break;
+                    }
+                    reset();
+                }
+            };
+        }
+
+        
+    </script>
+
+    <div class="main">
+        <div class="bloco">
+            <div class="formulario">
+                <h1>Calculadora de Área Plana</h1>
+                Selecione a forma:<br>
+                <input type="radio" id="circulo" value="circulo" name="forma" class="forma">
+                <label for="circulo">Círculo</label>
+
+                <input type="radio" id="triangulo" value="triangulo" name="forma" class="forma">
+                <label for="triangulo">Triângulo</label>
+
+                <input type="radio" id="quadrado" value="quadrado" name="forma" class="forma">
+                <label for="quadrado">Quadrado</label>
+
+                <input type="radio" id="losango" value="losango" name="forma" class="forma">
+                <label for="losango">Losango</label><br>
+
+                <input type="radio" id="retangulo" value="retangulo" name="forma" class="forma">
+                <label for="retangulo">Retângulo</label>
+
+                <input type="radio" id="paralelogramo" value="paralelogramo" name="forma" class="forma">
+                <label for="paralelogramo">Paralelogramo</label>
+
+                <input type="radio" id="trapezio" value="trapezio" name="forma" class="forma">
+                <label for="trapezio">Trapézio</label><br><br>
+
+                Raio: <input type="number" id="raio" disabled> <br>
+                Lado: <input type="number" id="lado" disabled><br>
+                Altura: <input type="number" id="altura" disabled> <br>
+                Base: <input type="number" id="base" disabled> <br>
+                Base Menor: <input type="number" id="baseMenor" disabled> <br>
+                Diagonal Maior: <input type="number" id="diagonalMaior" disabled> <br>
+                Diagonal Menor: <input type="number" id="diagonalMenor" disabled> <br>
+
+            </div>
+            <button onclick="calcular()">CALCULAR</button><br><br>
+
+            <div class="resultado" id="resultado"></div>
+        </div>
+    </div>
+</body>
+
+</html>

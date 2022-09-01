@@ -1,0 +1,30 @@
+<!-- Escreva um programa que calcule a média de quatro números informados pelo usuário, mas somente se esses números forem maiores que 0 e menores 
+que 10. No final, se a média for maior que cinco o usuário receberá uma mensagem "Você passou no teste". Em qualquer outra situação, ele 
+receberá uma mensagem de "tente novamente" -->
+
+<script>
+    alert("Bem-vindo, vamos jogar?")
+    alert("Me diga quatro números")
+    var numero=parseFloat(prompt("O primeiro"));
+    var numero2=parseFloat(prompt("O próximo"));
+    var numero3=parseFloat(prompt("Mais um"));
+    var numero4=parseFloat(prompt("o último"));
+    var numeros=[numero, numero2, numero3, numero4];
+    var resultado=0;
+    
+
+    for(var i=0; i<numeros.length; i++){
+        if(numeros[i]>0 && numeros[i]<10){
+            resultado+=numeros[i];
+        }
+    }
+
+var media=resultado/numeros.length;
+
+    if(media>5){
+        alert("Parabéns, você passou no teste");
+    }else{
+        alert("Tente novamente");
+    }
+
+</script>
