@@ -16,7 +16,7 @@ Hora de Codar 2:<br>
 ·exercicio5-Faça um programa que leia 6 valores informados pelo usuário, calcule, exiba os números informados e escreva a média aritmética desses valores lidos.<br>
 ·exercicio6-Faça um programa que receba quatro valores informados pelo usuário, mas informe somente o primeiro, o último e o maior de todos eles.<br>
 ·exercicio7-Faça um programa que leia 6 números que o usuário vai informar. Todos os números lidos com valor inferior a 72 devem ser somados. Escreva o valor final da soma efetuada e também todos valores que o usuário informou.<br>
-·exercicio8- Escreva um programa que calcule a média de quatro números informados pelo usuário, mas somente se esses números forem maiores que 0 e menores que 10. No final, se a média for maior que cinco o usuário receberá uma mensagem "Você passou no teste". Em qua.lquer outra situação, ele receberá uma mensagem de "tente novamente"
+·exercicio8- Escreva um programa que calcule a média de quatro números informados pelo usuário, mas somente se esses números forem maiores que 0 e menores que 10. No final, se a média for maior que cinco o usuário receberá uma mensagem "Você passou no teste". Em qua.lquer outra situação, ele receberá uma mensagem de "tente novamente".<br>
 ·exercicio9-Escreva um programa para ler o ano de nascimento de uma pessoa e escrever uma mensagem que diga se ela poderá ou não votar este ano.<br>
 ·exercicio10-Calculadora de peso ideal.<br>
 ·exercicio11-Micro calculadora.<br>
