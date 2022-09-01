@@ -1,7 +1,7 @@
 # Hora_de_Codar
-Atividade usando Javascript(principalmente os comandos alert e prompt)
+Atividade usando Javascript(principalmente os comandos alert e prompt)<br>
 
-Lista de exercícios
+Lista de exercícios<br>
 Hora de Codar 1:
 ·carro-Escreva um programa em Javascript e crie uma variável chamada "nomeDoCarro" e atribua-a um valor "Fusca".
 ·mensagem-Escreva um programa em Javascript em que o usuário informe o seu nome e exiba a mensagem "Olá, [NomeDoUsuario]".
